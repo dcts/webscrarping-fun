@@ -1,17 +1,12 @@
 // load service to get CSRF Token
-const extractCSRF = require("./extractCSRF.js");
 const Instagram = require("./Instagram.js");
 
+// // Usage Examples
+// // get csrfToken from IG with puppeteer
+// await Instagram.getCsrfToken();
 
-// get N csfr tokens at once service
-// (async () => {
-//   const n = 100;
+// // check if handle is taken
+// await Instagram.checkHandle("handle-to-check");
 
-//   const promises = []
-//   for (let i = 0; i < n; i++) {
-//     promises.push(extractCSRF.run());
-//   }
-
-//   const tokens = await Promise.all(promises);
-//   console.log(tokens.join("\n"));
-// })();
+// // check if email is taken
+// await Instagram.checkEmail("email@example.com");

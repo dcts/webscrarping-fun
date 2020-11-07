@@ -1,7 +1,7 @@
 # WEBSCRAPING AND API FUN
 
 ### goals instagram API
-- [ ] reverse engeneer undocumented endpoint to check if a instagram handle is already taken or abvailible?
+- [x] reverse engeneer undocumented endpoint to check if a instagram handle is already taken or abvailible?
   - handleIsValid?
     - endpoint    : `localhost:8000/handleIsValid?handle={instagramHandle}`
     - description : checks if handle follows instagram rules
@@ -15,7 +15,7 @@
 - [ ] 🚀 deploy API google cloud (public)
 
 FINDINGS:
-- blocking after 10 requests in short time
+- blocking after 10 requests in short time => with same csrf Token
 
 ### job scraping
 - [ ] find a site to scrape job post from

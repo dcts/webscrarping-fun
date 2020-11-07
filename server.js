@@ -2,6 +2,8 @@
 // const app = express();
 // const PORT = process.env.PORT || 3000;
 const Instagram = require("./Instagram.js");
+const extractCSRF = require("./extractCSRF.js");
+const extractTEST = require("./extractTEST.js");
 
 exports.validateInstagram = async (req, res) => {
   // get email or handle from query params
@@ -30,6 +32,15 @@ exports.validateInstagram = async (req, res) => {
   res.json(responseObj);
 };
 
+exports.getCsrfToken = async (req, res) => {
+  const response = await extractCSRF.run();
+  res.json(response);
+}
+
+exports.extractTEST = async (req, res) => {
+  const response = await extractTEST.run("https://instagram.com");
+  res.json(response);
+}
 
 // app.listen(PORT, () => {
 //   console.log(`Example app listening at http://localhost:${PORT}`)

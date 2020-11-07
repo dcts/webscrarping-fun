@@ -1,6 +1,7 @@
 // load service to get CSRF Token
 const Instagram = require("./Instagram.js");
 const extractCSRF = require("./extractCSRF.js");
+const extractTEST = require("./extractTEST.js");
 
 // // Usage Examples
 // // get csrfToken from IG with puppeteer

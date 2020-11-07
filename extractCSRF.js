@@ -1,11 +1,20 @@
 const puppeteer = require('puppeteer');
 
 exports.run = async () => {
+  console.log("launching puppeteer...");
+  const browser = await puppeteer.launch({
+    args: [
+      '--no-sandbox',
+    ]
+  });
+  console.log("opening new context...");
+  const context = await browser.createIncognitoBrowserContext();
+  console.log("opening new page...");
+  const page = await context.newPage();
 
-  console.log("extractCSRF.run()...");
-  console.log("launching puppeteer");
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  // console.log("launching puppeteer");
+  // const browser = await puppeteer.launch();
+  // const page = await browser.newPage();
   console.log("opening instagram.com");
   await page.goto('https://instagram.com');
 

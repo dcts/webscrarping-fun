@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 
 exports.run = async () => {
+
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://instagram.com');
@@ -38,4 +39,3 @@ function extractCsrfToken(cookieStr) {
 function getTimestamp() {
   return new Date().toISOString().split("T")[1];
 }
-

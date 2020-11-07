@@ -1,3 +1,5 @@
 # vscode history plugin
 .history
 
+# node modules
+node_modules

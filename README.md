@@ -17,7 +17,6 @@
 FINDINGS:
 - blocking after 10 requests in short time
 
-
 ### job scraping
 - [ ] find a site to scrape job post from
 - [ ] scrape single job

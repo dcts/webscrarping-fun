@@ -11,8 +11,9 @@
   - emailIsAvailible?
     - endpoint    : `localhost:8000/emailIsAvailible?email={email}`
     - description : checks if a given email is tied to instagram account
-- [ ] write API on localhost
-- [ ] 🚀 deploy API google cloud (public)
+- [x] write API on localhost
+- [x] 🚀 deploy API google cloud (public)
+- Good article on how to get Cookies of a given website with puppeteer: https://blog.riemann.cc/digitalisation/2019/01/30/node-script-to-display-cookies/
 
 FINDINGS:
 - blocking after 10 requests in short time => with same csrf Token

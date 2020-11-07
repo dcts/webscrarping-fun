@@ -47,7 +47,8 @@ class Instagram {
   }
 
   static async getCsrfToken() {
-    return await extractCSRF.run();
+    return "ch3Mc420swdXjz2oyeAKF3C08Q6MnAzA";
+    // return await extractCSRF.run();
   }
 }
 

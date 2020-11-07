@@ -2,15 +2,19 @@
   "name": "instagram-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "insomnia-importers": "^2.2.24",
     "node-fetch": "^2.6.1",
     "puppeteer": "^5.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }

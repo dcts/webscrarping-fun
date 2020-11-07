@@ -40,10 +40,18 @@ exports.run = async () => {
 
 // click on "Akzeptieren" button to accept cookies
 async function acceptCookies(page) {
-  await page.evaluate(_ => {
-    acceptCookieBttn = document.querySelector(".aOOlW.bIiDR");
-    acceptCookieBttn.click();
-  });
+  try {
+    await page.evaluate(_ => {
+      acceptCookieBttn = document.querySelector(".aOOlW.bIiDR");
+      acceptCookieBttn.click();
+    });
+    console.log("clicked on accept cookies button");
+    return true;
+  } catch(error) {
+    console.log(error);
+    console.log("NO accept cookies button found!");
+    return false;
+  }
 }
 // // ALTERNATIVE SOLUTION (depends on language)
 // const allButtons = Array.from(document.querySelectorAll("button"));

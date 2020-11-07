@@ -2,22 +2,30 @@ const puppeteer = require('puppeteer');
 
 exports.run = async () => {
 
+  console.log("extractCSRF.run()...");
+  console.log("launching puppeteer");
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
+  console.log("opening instagram.com");
   await page.goto('https://instagram.com');
 
   // click on accept cookies button
+  console.log("acceppting cookies");
   await acceptCookies(page);
 
   // wait for cookies to be set and extract csrf token
-  await page.waitForFunction(() => document.cookie.includes("csrftoken"));
+  console.log("waiting for csrf token, max timeout 10 sec");
+  await page.waitForFunction(() => document.cookie.includes("csrftoken"), { timeout: 10000 });
   const cookieStr = await page.evaluate(_ => document.cookie);
   const csrfToken = extractCsrfToken(cookieStr);
+  console.log("extracted csrf token => " + csrfToken);
 
   // close browser
+  console.log("closing browser");
   await browser.close();
 
   // return csrfToken
+  console.log("returning csrf token => " + csrfToken);
   return csrfToken;
 }
 
